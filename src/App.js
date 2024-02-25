@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './component/Header/Header';
 import Home from './component/Home/Home';
 import FavList from './component/FavList/FavList';
-
+  
 function App() {
   return (
     <div className="App">

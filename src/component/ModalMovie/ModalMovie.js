@@ -9,6 +9,9 @@ function ModalMovie(props) {
         setComment(event.target.value);
     };
 
+
+
+
     const handleAddToFav = () => {
         const { id, title, release_date, poster_path, overview, comment } = props.movie;
 
