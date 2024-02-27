@@ -9,15 +9,12 @@ function ModalMovie(props) {
         setComment(event.target.value);
     };
 
-
-
-
     const handleAddToFav = () => {
-        const { id, title, release_date, poster_path, overview, comment } = props.movie;
+        const { id, title, release_date, poster_path, overview } = props.movie;
 
         console.log('Sending data:', { id, title, release_date, poster_path, overview, comment });
 
-        fetch('http://localhost:3013/addMovie', {
+        fetch('https://movies-library-server-bpo3.onrender.com/addMovie', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,7 +25,7 @@ function ModalMovie(props) {
                 release_date,
                 poster_path,
                 overview,
-                comment
+                comment,
             }),
         })
             .then(response => response.json())
@@ -41,6 +38,8 @@ function ModalMovie(props) {
             });
     };
 
+
+
     return (
         <>
             <Modal show={props.show} onHide={props.HandleCloseModel}>
@@ -50,13 +49,13 @@ function ModalMovie(props) {
                 <Modal.Body>
                     <img src={props.movie.poster_path} alt={props.movie.title} style={{ maxWidth: '100%' }} />
                     <p>{props.movie.overview}</p>
-                    <label htmlFor="comment">Add a Comment:</label> 
+                    <label htmlFor="comment">Add a Comment:</label>
                     <input type="text" id="comment" placeholder="Enter your comment" value={comment} onChange={handleComment} />
 
 
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => {props.HandleCloseModel()}}>
+                    <Button variant="secondary" onClick={() => { props.HandleCloseModel() }}>
                         Close
                     </Button>
                     <Button variant="primary" onClick={handleAddToFav}>
