@@ -5,7 +5,7 @@ function Home() {
     const [movieArr, setMovieArr] = useState([]);
 
     const sendReq = async () => {
-        const serverURL = `http://localhost:3013/trending`;
+        const serverURL = `https://movies-library-server-bpo3.onrender.com/trending`;
         const res = await fetch(serverURL);
         console.log(res)
         const jsonRes = await res.json();

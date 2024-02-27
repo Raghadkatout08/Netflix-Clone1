@@ -15,6 +15,8 @@ function Movie(props) {
         setShowModal(false);
     };
 
+
+
     return (
         <>
             <Card style={{ width: '30rem' }}>

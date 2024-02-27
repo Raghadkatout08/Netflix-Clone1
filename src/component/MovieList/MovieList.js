@@ -7,7 +7,7 @@ function MovieList({movieArr})
 {
     return(
         <>
-            <Row xs={1} md={2} className="g-4">
+            <Row xs={1} md={2} lg={3} className="g-4">
                 {movieArr.map((item) => (
                      <Col key={item.id}>
                         <Movie movie={item} />
